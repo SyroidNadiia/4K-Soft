@@ -1,8 +1,9 @@
-User Management System for Online Store
+## User Management System for Online Store
+
 This project implements a user management system for an online store. It includes both frontend and backend components to allow users to register on the platform.
 
-Features
-Frontend:
+### Features
+## Frontend:
 
 User registration form with fields for name, email, and password.
 Upon clicking the "Register" button, user data is sent to the server via a POST request.
@@ -23,11 +24,15 @@ Redux Toolkit for state management
 Axios for handling HTTP requests
 Formik and Yup for form validation
 React Router DOM for routing
-Backend:
+
+
+## Backend:
 
 Node.js
 Express.js
-MongoDB or another database of your choice
+MongoDB 
+
+
 Getting Started
 Clone the repository to your local machine.
 
