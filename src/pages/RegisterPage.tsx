@@ -1,4 +1,4 @@
-import RegisterForm from 'components/RegisterForm/RegisterForm';
+import RegisterForm from '../components/RegisterForm/RegisterForm';
 import React from 'react';
 
 import { Background, Container, AuthContainer } from './RegisterPage.styled';

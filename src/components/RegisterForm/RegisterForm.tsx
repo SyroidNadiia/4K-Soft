@@ -1,8 +1,10 @@
+
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import Input from 'components/Input/Input';
-import Button from 'components/Button/Button';
+import Input from '../Input/Input';
+import Button from '../Button/Button';
+
 
 interface RegisterFormProps {
   onRegister: (values: RegisterFormValues) => void;

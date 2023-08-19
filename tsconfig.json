@@ -1,10 +1,22 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
-    "allowImportingTsExtensions": true,
-    "jsx": "react",
+    "target": "es6",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
     "esModuleInterop": true,
-    "noEmit": true
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "baseUrl": "./src",
+    "paths": {
+      "*": ["*", "src/*"]
+    }
   },
-  "include": ["src"]
+  
 }

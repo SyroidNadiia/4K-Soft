@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 
 
 export const Background = styled.section`
-  background-image: var(--welcomeBgColor);
   min-height: 100vh;
   display: flex;
   align-items: center;

@@ -3,7 +3,7 @@ import { ButtonStyled } from './Button.styled';
 
 interface ButtonProps {
   children: ReactNode;
-  type?: string;
+  type?: 'button' | 'reset' | 'submit';
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   width?: string;
   height?: string;

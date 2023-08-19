@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://backend-taskspro-public.onrender.com';
+axios.defaults.baseURL = 'https://form-register-back.onrender.com';
 
 
 const register = createAsyncThunk(

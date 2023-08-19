@@ -1,14 +1,8 @@
-import React, { lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
-
-const RegisterPage = lazy(() => import('./pages/RegisterPage'));
+import React from 'react';
+import RegisterPage from './pages/RegisterPage';
 
 const App = () => {
-  return (
-    <Routes>
-      <Route index element={<RegisterPage />}></Route>
-    </Routes>
-  );
+  return <RegisterPage />;
 };
 
 export default App;

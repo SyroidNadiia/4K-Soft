@@ -21,7 +21,6 @@ const Input: React.FC<InputProps> = ({
   placeholder,
   onChange,
   onBlur,
-  background,
   ...rest
 }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -37,7 +36,6 @@ const Input: React.FC<InputProps> = ({
         name={name}
         placeholder={placeholder}
         onChange={onChange}
-        background={background}
         {...rest}
       />
       {type === 'password' && (
