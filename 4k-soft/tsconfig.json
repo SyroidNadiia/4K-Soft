@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "allowImportingTsExtensions": true,
+    "jsx": "react",
+    "esModuleInterop": true,
+    "noEmit": true
+  },
+  "include": ["src"]
+}
