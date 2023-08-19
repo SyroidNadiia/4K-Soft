@@ -1,46 +1,42 @@
-# Getting Started with Create React App
+User Management System for Online Store
+This project implements a user management system for an online store. It includes both frontend and backend components to allow users to register on the platform.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Features
+Frontend:
 
-## Available Scripts
+User registration form with fields for name, email, and password.
+Upon clicking the "Register" button, user data is sent to the server via a POST request.
+Feedback to the user regarding the registration status (e.g., success message or error message).
+Backend:
 
-In the project directory, you can run:
+Server-side API with an endpoint for user registration.
+Validation of user input data (e.g., checking if all required fields are filled, validating email format).
+Creation of a new user in the database upon successful validation.
+Returning a response with success status or an error message to the frontend.
+Technologies Used
+Frontend:
 
-### `npm start`
+React
+TypeScript
+Emotion for styling
+Redux Toolkit for state management
+Axios for handling HTTP requests
+Formik and Yup for form validation
+React Router DOM for routing
+Backend:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Node.js
+Express.js
+MongoDB or another database of your choice
+Getting Started
+Clone the repository to your local machine.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Install frontend dependencies:
+npm install
+Start the frontend development server:
+npm start
+Contributing
+Contributions are welcome! Feel free to open issues or pull requests to improve this project.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
