@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/4K-Soft/static/css/main.e6c13ad2.css",
+    "main.js": "/4K-Soft/static/js/main.0f44e010.js",
+    "index.html": "/4K-Soft/index.html",
+    "main.e6c13ad2.css.map": "/4K-Soft/static/css/main.e6c13ad2.css.map",
+    "main.0f44e010.js.map": "/4K-Soft/static/js/main.0f44e010.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.0f44e010.js"
+  ]
+}
