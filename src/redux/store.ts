@@ -12,7 +12,6 @@ import storage from 'redux-persist/lib/storage';
 
 import { authReducer } from './auth';
 
-
 const authPersistConfig = {
   key: 'auth',
   storage,
@@ -21,15 +20,20 @@ const authPersistConfig = {
 
 const persistedAuthReducer = persistReducer(authPersistConfig, authReducer);
 
-
 export const store = configureStore({
   reducer: {
     auth: persistedAuthReducer,
-   
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
+  
+        ignoredActionPaths: [
+          'payload.headers',
+          'payload.config',
+          'payload.request',
+        ],
+
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),

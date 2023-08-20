@@ -3,6 +3,8 @@ import axios from 'axios';
 import Notiflix from 'notiflix';
 
 axios.defaults.baseURL = 'https://form-register-back.onrender.com';
+// axios.defaults.headers.common['Content-Type'] = 'application/json';
+
 
 interface RegisterData {
   name: string;

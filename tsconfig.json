@@ -18,5 +18,13 @@
       "*": ["*", "src/*"]
     }
   },
-  
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.png"
+  ],
+  "exclude": ["node_modules"]
 }
