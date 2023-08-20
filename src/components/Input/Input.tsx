@@ -30,25 +30,38 @@ const Input: React.FC<InputProps> = ({
   };
 
   return (
-    <InputUnit>
-      <InputStyled
-        type={showPassword ? 'text' : type}
-        name={name}
-        placeholder={placeholder}
-        onChange={onChange}
-        {...rest}
-      />
-      {type === 'password' && (
-        <PasswordWrapperIcon onClick={handleTogglePassword}>
-          {showPassword ? (
-            <AiOutlineEye fill="#161616" />
-          ) : (
-            <AiOutlineEyeInvisible fill="#161616" />
-          )}
-        </PasswordWrapperIcon>
+    <>
+      {type === 'password' ? (
+        <InputUnit>
+          <InputStyled 
+            type={showPassword ? 'text' : type}
+            name={name}
+            placeholder={placeholder}
+            onChange={onChange}
+           
+            {...rest}
+          />
+          <PasswordWrapperIcon onClick={handleTogglePassword}>
+            {showPassword ? (
+              <AiOutlineEye fill="#161616" />
+            ) : (
+              <AiOutlineEyeInvisible fill="#161616" />
+            )}
+          </PasswordWrapperIcon>
+        </InputUnit>
+      ) : (
+        <InputStyled
+          type={showPassword ? 'text' : type}
+          name={name}
+          placeholder={placeholder}
+          onChange={onChange}
+          
+          {...rest}
+        />
       )}
-    </InputUnit>
+    </>
   );
 };
 
 export default Input;
+

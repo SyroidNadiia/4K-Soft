@@ -1,89 +1,102 @@
-
 import React from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Input from '../Input/Input';
 import Button from '../Button/Button';
+import { register } from '../../redux/auth/authOperations';
+import { RegisterFormStyle } from './RegisterForm.styled';
+import { useDispatch } from 'react-redux';
 
-
-interface RegisterFormProps {
-  onRegister: (values: RegisterFormValues) => void;
-}
-
-interface RegisterFormValues {
+interface RegisterData {
   name: string;
   email: string;
   password: string;
 }
 
-const initialValues: RegisterFormValues = {
+interface FormValues {
+  name: string;
+  email: string;
+  password: string;
+}
+
+const initialValues: FormValues = {
   name: '',
   email: '',
   password: '',
 };
 
-const registerSchema = Yup.object().shape({
+const registerSchema = Yup.object({
   name: Yup.string().required('Name is required'),
-  email: Yup.string().email('Invalid email').required('Email is required'),
-  password: Yup.string().required('Password is required'),
+  email: Yup.string()
+    .required('Email is required')
+    .email('Invalid email address'),
+  password: Yup.string()
+    .required('Password is required')
+    .min(8, 'Password must be at least 8 characters long')
+    .matches(
+      /^(?=.*[A-Z])(?=.*[@#$%^&+=]).*$/,
+      'Password must contain at least one uppercase letter and one special character'
+    ),
 });
 
-const RegisterForm: React.FC<RegisterFormProps> = ({ onRegister }) => {
-  const formik = useFormik({
-    initialValues: initialValues,
-    validationSchema: registerSchema,
-    onSubmit: values => {
-      onRegister(values);
-    },
-  });
+const RegisterForm: React.FC = () => {
+  const dispatch = useDispatch();
+
+  const onHandleSubmit = async (
+    formValues: RegisterData,
+    { resetForm }: { resetForm: () => void }
+  ) => {
+    dispatch(register(formValues) as any);
+    resetForm();
+  };
+
+  const { handleSubmit, handleChange, handleBlur, values, errors, touched } =
+    useFormik({
+      initialValues,
+      onSubmit: onHandleSubmit,
+      validationSchema: registerSchema,
+    });
 
   return (
-    <form
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '14px',
-      }}
-      onSubmit={formik.handleSubmit}
-    >
+    <RegisterFormStyle onSubmit={handleSubmit}>
       <Input
         name="name"
         type="text"
         placeholder="Enter your name"
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        value={formik.values.name}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        value={values.name}
       />
-      {formik.errors.name && formik.touched.name && (
-        <span style={{ color: 'red' }}>{formik.errors.name}</span>
-      )}
+      {errors.name && touched.name ? (
+        <span style={{ color: 'red' }}>{errors.name}</span>
+      ) : null}
 
       <Input
         name="email"
         type="email"
         placeholder="Enter your email"
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        value={formik.values.email}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        value={values.email}
       />
-      {formik.errors.email && formik.touched.email && (
-        <span style={{ color: 'red' }}>{formik.errors.email}</span>
-      )}
+      {errors.email && touched.email ? (
+        <span style={{ color: 'red' }}>{errors.email}</span>
+      ) : null}
 
       <Input
         name="password"
         type="password"
-        placeholder="Enter your password"
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        value={formik.values.password}
+        placeholder="Create a password"
+        onChange={handleChange}
+        onBlur={handleBlur}
+        value={values.password}
       />
-      {formik.errors.password && formik.touched.password && (
-        <span style={{ color: 'red' }}>{formik.errors.password}</span>
-      )}
+      {errors.password && touched.password ? (
+        <span style={{ color: 'red' }}>{errors.password}</span>
+      ) : null}
 
       <Button type="submit">Register</Button>
-    </form>
+    </RegisterFormStyle>
   );
 };
 

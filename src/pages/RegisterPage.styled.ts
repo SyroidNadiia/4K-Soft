@@ -33,7 +33,7 @@ export const Container = styled.div`
 
 export const AuthContainer = styled.div`
   width: 100%;
-  padding: 24px;
+ 
 
   background-color: var(--bgColorAuth);
   border-radius: 8px;

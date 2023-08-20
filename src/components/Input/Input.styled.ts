@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 
 export const InputStyled = styled.input`
-  position: relative;
-
   width: calc(100%);
   height: 49px;
   padding: 14px 18px;
+  display: flex;
+  align-items: center;
 
   border-radius: 8px;
 
@@ -21,8 +21,8 @@ export const InputStyled = styled.input`
   background: #fff;
   border: 1px solid #5255bc;
   color: #161616;
-
-  &::placeholder {
+  box-sizing: border-box;
+   &::placeholder {
     font-size: 14px;
     letter-spacing: -0.28px;
     color: #161616;
@@ -35,18 +35,18 @@ export const InputStyled = styled.input`
 
 export const InputUnit = styled.div`
   position: relative;
+  width: 100%;
+
 `;
 
 export const PasswordWrapperIcon = styled.span`
   width: 18px;
   height: 18px;
   position: absolute;
-  bottom: 14px;
-  right: 18px;
+  bottom: 20px;
+  right: 15px;
   color: #161616;
   opacity: 0.4;
 `;
 
-export const PasswordInputWrapper = styled.div`
-  position: relative;
-`;
+

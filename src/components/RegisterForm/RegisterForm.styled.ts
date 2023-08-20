@@ -5,9 +5,3 @@ export const RegisterFormStyle = styled.form`
   flex-direction: column;
   gap: 14px;
 `;
-
-export const RegisterInputStyle = styled.input``;
-
-export const ErrorMsg = styled.span`
-  color: #fff;
-`;

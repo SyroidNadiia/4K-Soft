@@ -1,12 +1,12 @@
-import React, { lazy } from 'react';
+import RegisterPage from 'pages/RegisterPage';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-const RegisterPage = lazy(() => import('./pages/RegisterPage'));
 
 const App = () => {
   return (
     <Routes>
-      <Route index element={<RegisterPage />}></Route>
+      <Route path="/auth/register" element={<RegisterPage />}></Route>
     </Routes>
   );
 };
