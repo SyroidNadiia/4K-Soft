@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { register } from './authOperations';
 
-
 interface ServerResponse {
   data: {
     user: any;
@@ -32,15 +31,14 @@ const authSlice = createSlice({
           ) {
             state.user = action.payload.data.user;
           } else {
-            state.user = null;
+            state.user = { name: null, email: null };
           }
-        
         }
       )
       .addCase(
         register.rejected,
         (state, action: PayloadAction<unknown, string, any, any>) => {
-          state.user = null;
+          state.user = { name: null, email: null };
         }
       );
   },

@@ -43,7 +43,7 @@ export const PasswordWrapperIcon = styled.span`
   width: 18px;
   height: 18px;
   position: absolute;
-  bottom: 20px;
+  bottom: 15px;
   right: 15px;
   color: #161616;
   opacity: 0.4;
